@@ -11,7 +11,6 @@ $(document).ready(function() {
         getfade()
 
     }
-    init()
 
     function getfade(){
         fade_position_arr = [];
@@ -32,7 +31,6 @@ $(document).ready(function() {
             var imgH = $(this).find('img').height();
             var imgW = $(this).find('img').width();
             var imgI = (imgH / imgW).toFixed(2);
-
             if (imgcoI > imgI) {
                 $(this).find('.img-container').removeClass('img-heigher');
                 $(this).find('.img-container').addClass('img-wider');
@@ -46,6 +44,8 @@ $(document).ready(function() {
         });
         
     }
+
+    init();
 
     $('#navbar-toggler').click(function(){
         var target = $(this).attr('data-target');
@@ -168,7 +168,7 @@ $(document).ready(function() {
     var artworksList, artistsList;
 
     $.ajax({
-      url: "js/artworks.json?v=2",
+      url: "js/artworks.json?v=3",
       type: "GET",
       dataType: "json",
       success: function(Jdata) {
@@ -182,7 +182,7 @@ $(document).ready(function() {
     });
 
     $.ajax({
-      url: "js/artists.json?v=2",
+      url: "js/artists.json?v=3",
       type: "GET",
       dataType: "json",
       success: function(Jdata) {

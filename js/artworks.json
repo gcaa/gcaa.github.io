@@ -170,6 +170,16 @@
 	"class" : ""
 },
 {
+	"artwork" : "lsm-3",
+	"url" : "20.jpg",
+	"artist" : "lsm",
+	"ch-name" : "森林",
+	"en-name" : "The Forest",
+	"intro" : "2017年出發往北美洲旅行的時候，帶上了針線，這次想用針線來寫遊記。\n超市的牛皮紙袋、森林公園的目錄、以及商店的型錄⋯⋯旅行生活中撿拾的紙片，用針線串起它們，映出此地風景的意象。",
+	"data" : "紙、線\npaper、sewing\n9.5 x 15 cm x 5張\n2017",
+	"class" : ""
+},
+{
 	"artwork" : "yjd-2",
 	"url" : "16.jpg",
 	"artist" : "yjd",
@@ -187,6 +197,16 @@
 	"en-name" : "",
 	"intro" : "藉由山水的留白，凝練出原始舞蹈的線條。",
 	"data" : "畫布油彩\n53 x 45.5 cm\n2018",
+	"class" : ""
+},
+{
+	"artwork" : "lsm-4",
+	"url" : "21.jpg",
+	"artist" : "lsm",
+	"ch-name" : "海",
+	"en-name" : "The Ocean",
+	"intro" : "淘砂船緩慢的 彷彿紅色的小島\n蒼鷺在棧板上 晾曬浸濕的羽毛\n沙灘  浪潮  浮球  ⋯⋯\n岩岬交錯的後方是 英吉利海峽",
+	"data" : "紙、線\npaper、sewing\n9.5 x 15 cm x 5張\n2017",
 	"class" : ""
 }
 ]
