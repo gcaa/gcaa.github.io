@@ -1,4 +1,24 @@
 $(document).ready(function() {
+    
+    var isloaded = false;
+
+    //preload
+    $(window).on("load", function () {// makes sure the whole site is loaded
+        if (!isloaded) {
+            loaded();
+        }
+    });
+    setTimeout(function(){
+        if (!isloaded) {
+            loaded();
+        }
+    }, 600);
+
+    function loaded(){
+        isloaded = true;
+        $('#status').fadeOut(); // will first fade out the loading animation
+        $('#preloader').delay(300).fadeOut('slow'); // will fade out the white DIV that covers the website.
+    }
 
 	function init() {
         artist_arr = [];
@@ -127,7 +147,7 @@ $(document).ready(function() {
             imgfit(element.parents(".artwork"));
         },
         onError: function(element) {
-            // console.log('error loading ' + element.data('src'));
+            console.log('error loading ' + element.data('src'));
         }
     });
     /* fade in */
