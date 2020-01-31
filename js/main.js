@@ -7,7 +7,6 @@ $(document).ready(function() {
             artist_arr.push(artist_num); 
         });
 
-        imgfit();
         getfade()
 
     }
@@ -22,27 +21,27 @@ $(document).ready(function() {
         });
     }
 
-    function imgfit(){
-        $('.artwork').each(function(){
-            var imgcoH = $(this).height();
-            var imgcoW = $(this).width();
+    function imgfit(e){
+            var imgcoH = e.height();
+            var imgcoW = e.width();
             var imgcoI = (imgcoH / imgcoW).toFixed(2);
             
-            var imgH = $(this).find('img').height();
-            var imgW = $(this).find('img').width();
+            var imgH = e.find('img').height();
+            var imgW = e.find('img').width();
             var imgI = (imgH / imgW).toFixed(2);
+
+            // console.log(e + ":" + imgcoI + ":" + imgI);
+
             if (imgcoI > imgI) {
-                $(this).find('.img-container').removeClass('img-heigher');
-                $(this).find('.img-container').addClass('img-wider');
+                e.find('.img-container').removeClass('img-heigher');
+                e.find('.img-container').addClass('img-wider');
             }else if (imgcoI < imgcoI) {
-                $(this).find('.img-container').removeClass('img-wider');
-                $(this).find('.img-container').addClass('img-heigher');
+                e.find('.img-container').removeClass('img-wider');
+                e.find('.img-container').addClass('img-heigher');
             }else {
-                $(this).find('.img-container').removeClass('img-wider');
-                $(this).find('.img-container').removeClass('img-heigher');
+                e.find('.img-container').removeClass('img-wider');
+                e.find('.img-container').removeClass('img-heigher');
             }
-        });
-        
     }
 
     init();
@@ -115,11 +114,22 @@ $(document).ready(function() {
     });
 
     $(window).resize(function(){
-        imgfit();
+        $('.artwork').each(function(){
+            imgfit($(this));
+        });
         getfade();
     })
 
-
+    $('.lazy').Lazy({
+        delay: '1000',
+        afterLoad: function(element) {
+            // console.log(element.parents(".artwork"));
+            imgfit(element.parents(".artwork"));
+        },
+        onError: function(element) {
+            // console.log('error loading ' + element.data('src'));
+        }
+    });
     /* fade in */
 
     function checkfadein(position) {
@@ -173,7 +183,7 @@ $(document).ready(function() {
       dataType: "json",
       success: function(Jdata) {
         artworksList = Jdata;
-        console.log(artworksList);
+        // console.log(artworksList);
         $('#artworkNum').html(artworksList.length);
       },
       error: function() {
@@ -187,7 +197,7 @@ $(document).ready(function() {
       dataType: "json",
       success: function(Jdata) {
         artistsList = Jdata;
-        console.log(artistsList);
+        // console.log(artistsList);
       },
       error: function() {
         alert("error");
@@ -272,7 +282,7 @@ $(document).ready(function() {
     }
 
     function getPageNum(artworkNum, artistNum){
-        console.log(artworkNum + ',' + artist_arr[artworkNum])
+        // console.log(artworkNum + ',' + artist_arr[artworkNum])
         artworkNum = parseInt(artworkNum);
         if (artworkNum < (artist_arr.length - 1) && artworkNum > 0) {
             $('#prevArt').attr('data-num', artworkNum - 1).attr('data-artist', artist_arr[artworkNum - 1]);
@@ -284,7 +294,7 @@ $(document).ready(function() {
             $('#prevArt').attr('data-num', artworkNum - 1).attr('data-artist', artist_arr[artworkNum - 1]);
             $('#nextArt').attr('data-num', 0).attr('data-artist', artist_arr[0]);
         }else {
-            console.log('Art is missing');
+            // console.log('Art is missing');
         }
     }
 
@@ -303,7 +313,7 @@ $(document).ready(function() {
 
             if ($('.popup.active').length > 0) {
                 $('.popup-close').click();
-                console.log('Back button was pressed.');
+                // console.log('Back button was pressed.');
                 return false;
             }
           
