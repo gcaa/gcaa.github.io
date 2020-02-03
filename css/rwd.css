@@ -56,7 +56,7 @@
 	}
 	.show-sm { display: block; }
 	.hide-sm { display: none; }
-	.show-sm-my-2 { margin-top: 1.4em; margin-bottom: 1.4em; }
+	.t-left-sm { text-align: left; }
 	.flex {
 		display: block;
 	}
