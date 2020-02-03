@@ -145,6 +145,7 @@ $(document).ready(function() {
         afterLoad: function(element) {
             // console.log(element.parents(".artwork"));
             imgfit(element.parents(".artwork"));
+            element.parents(".img-container").addClass("loaded");
         },
         onError: function(element) {
             console.log('error loading ' + element.data('src'));
@@ -198,7 +199,7 @@ $(document).ready(function() {
     var artworksList, artistsList;
 
     $.ajax({
-      url: "js/artworks.json?v=4",
+      url: "js/artworks.json?v=5",
       type: "GET",
       dataType: "json",
       success: function(Jdata) {
@@ -212,7 +213,7 @@ $(document).ready(function() {
     });
 
     $.ajax({
-      url: "js/artists.json?v=4",
+      url: "js/artists.json?v=5",
       type: "GET",
       dataType: "json",
       success: function(Jdata) {
