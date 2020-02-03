@@ -198,7 +198,7 @@ $(document).ready(function() {
     var artworksList, artistsList;
 
     $.ajax({
-      url: "js/artworks.json?v=3",
+      url: "js/artworks.json?v=4",
       type: "GET",
       dataType: "json",
       success: function(Jdata) {
@@ -212,7 +212,7 @@ $(document).ready(function() {
     });
 
     $.ajax({
-      url: "js/artists.json?v=3",
+      url: "js/artists.json?v=4",
       type: "GET",
       dataType: "json",
       success: function(Jdata) {
@@ -232,7 +232,7 @@ $(document).ready(function() {
         artclass = artwork['class']
         $('.artwork-img').addClass(artclass);
         $('#artworkTitle').html(artwork['ch-name'])
-        $('#artworkTitleEn').html(artwork['en-name'])
+        $('#artworkTitleEn').html(artwork['en-name'].replace(/\n/g,'<br />'))
         $('#artworkIntro').html(artwork['intro'].replace(/\n/g,'<br />'))
         
         $('#artworkData').html(artwork['data'].replace(/\n/g,'<br />'))
