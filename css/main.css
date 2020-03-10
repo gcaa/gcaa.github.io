@@ -373,7 +373,7 @@ header.blur.detached.show + .social-media .dialog {
 	left: 0;
 	width: 100%;
 	height: calc(var(--vh, 1vh) * 100);
-	background: url('../img/1920x1080.jpg') no-repeat;
+	background: url('../img/1920x1080-100.jpg') no-repeat;
 	background-size: contain;
 	background-position: bottom center;
 	z-index: -1;

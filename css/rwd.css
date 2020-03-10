@@ -1,11 +1,11 @@
 @media screen and (max-width: 1366px) {
 	.mainbg {
-		background-image: url('../img/1366x768.jpg');
+		/*background-image: url('../img/1366x768-100.jpg');*/
 	}
 }
 @media screen and (max-width: 1024px) {
 	.mainbg {
-		background-image: url('../img/1024x768.jpg');
+		/*background-image: url('../img/1024x768-100.jpg');*/
 	}
 	.video-container .popup-close {
 		right: 0;
@@ -31,7 +31,7 @@
 }
 @media screen and (orientation: portrait) {
 	.mainbg {
-		background-image: url('../img/768x1024.jpg');
+		background-image: url('../img/768x1024-100.jpg');
 	}
 	.video-sticker {
 		left: 5vh;
@@ -39,7 +39,7 @@
 }
 @media screen and (max-width: 400px) and (orientation: portrait) {
 	.mainbg {
-		background-image: url('../img/360x640.jpg');
+		/*background-image: url('../img/360x640-100.jpg');*/
 	}
 	.video-sticker {
 		left: 0;
