@@ -199,7 +199,7 @@ $(document).ready(function() {
     var artworksList, artistsList;
 
     $.ajax({
-      url: "js/artworks.json?v=5",
+      url: "js/artworks.json?v=6",
       type: "GET",
       dataType: "json",
       success: function(Jdata) {
@@ -213,7 +213,7 @@ $(document).ready(function() {
     });
 
     $.ajax({
-      url: "js/artists.json?v=5",
+      url: "js/artists.json?v=6",
       type: "GET",
       dataType: "json",
       success: function(Jdata) {
