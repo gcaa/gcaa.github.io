@@ -31,7 +31,7 @@
 }
 @media screen and (orientation: portrait) {
 	.mainbg {
-		background-image: url('../img/768x1024-100.jpg');
+		/*background-image: url('../img/768x1024-100.jpg');*/
 	}
 	.video-sticker {
 		left: 5vh;
@@ -53,6 +53,17 @@
 	.mainbg {
 		height: calc(var(--vh, 1vh) * 100 - 44px);
 		position: absolute;
+	}
+	.topsec .ml-5 {
+		margin-left: 0;
+	}
+	.main-title {
+		max-width: 85%;
+	}
+	.logosline {
+		transform: scale(0.75);
+	    transform-origin: left bottom;
+	    margin-bottom: 0.8em;
 	}
 	.show-sm { display: block; }
 	.hide-sm { display: none; }
@@ -78,7 +89,6 @@
     	bottom: auto;
 	}
 	.topsec {
-		padding: 30px;
 		height: calc(var(--vh, 1vh) * 100 - 44px);
 	}
 	
@@ -97,7 +107,6 @@
 	/* header */
 	header {
 		top: 0;
-		position: fixed;
 		overflow: hidden;
 		height: auto;
 		max-height: 55px;
@@ -108,13 +117,14 @@
 	    padding: 60px 0 20px;
 	}
 	header.detached {
+		position: fixed;
 		background: transparent;
 		box-shadow: none;
 		height: auto;
 	}
 	header.active, header.active.detached {
-		max-height: 500px;
-		background-color: #2f85a3;
+		max-height: 235px;
+		background-color: #009f89;
 	}
 	.hbg-btn {
 		display: inline-block;
@@ -141,6 +151,11 @@
 	}
 	header.active .navbar a {
 		opacity: 1;
+		color: #fff;
+	}
+	header.active .navbar a:hover {
+		color: #fff;
+		opacity: 0.5;
 	}
 	header.detached.active .hbg-btn {
 		background-color: rgba(255, 255, 255, 0);
@@ -253,7 +268,7 @@
 	.dialog::after {
 	    content: "購畫洽詢";
 	    position: absolute;
-	    color: #2f85a3;
+	    color: #009f89;
 	    width: 64px;
 	    height: 32px;
 	    font-size: 12px;

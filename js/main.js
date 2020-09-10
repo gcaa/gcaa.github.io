@@ -105,10 +105,11 @@ $(document).ready(function() {
     /* menu hide and detached */
     var prev = 0;
     var headerMenu = $('#header');
+    var headerTop = headerMenu.offset().top;
 
     function checkHeader(position){
         var bottom = $(document).height() - $(window).height() - 10;
-        if (position <= 40 ) {
+        if (position <= headerTop ) {
             headerMenu.removeClass('detached show detachedHide')
         }else{
             if (prev > position) {
@@ -134,6 +135,7 @@ $(document).ready(function() {
     });
 
     $(window).resize(function(){
+        headerTop = headerMenu.offset().top;
         $('.artwork').each(function(){
             imgfit($(this));
         });
