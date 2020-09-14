@@ -215,7 +215,7 @@ $(document).ready(function() {
     });
 
     $.ajax({
-      url: "js/artists.json?v=7",
+      url: "js/artists.json?v=8",
       type: "GET",
       dataType: "json",
       success: function(Jdata) {
