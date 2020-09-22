@@ -98,6 +98,7 @@ section {
 .d-table { display: table; }
 .d-row { display: table-row; }
 .d-cell { display: table-cell; }
+.relative { position: relative; }
 
 .mx-auto {
 	margin-left: auto!important;
@@ -105,6 +106,7 @@ section {
 }
 .mt-1 {	margin-top: 0.8em; }
 .mt-2 {	margin-top: 1.4em; }
+.mb-m {	margin-bottom: 9px; }
 .mb-1 {	margin-bottom: 0.8em; }
 .mb-2 {	margin-bottom: 1.4em; }
 .mb-3 {	margin-bottom: 2em; }
@@ -401,7 +403,7 @@ header.blur.detached.show + .social-media .dialog {
 	width: auto;
 	position: absolute;
     max-width: none;
-    right: 2em;
+    right: 0;
 }
 .mainbg {
 	position: fixed;
@@ -409,7 +411,7 @@ header.blur.detached.show + .social-media .dialog {
 	left: 0;
 	width: 100%;
 	height: calc(var(--vh, 1vh) * 100);
-	background: url('../img/gcaa20_bg.jpg') no-repeat;
+	background: url('../img/gcaa20_bg.jpg?v=2') no-repeat;
 	background-size: cover;
 	background-position: bottom center;
 	z-index: -1;
