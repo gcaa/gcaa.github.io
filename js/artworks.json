@@ -251,7 +251,7 @@
 },
 {
 	"artwork" : "syt-2",
-	"url" : "27.jpg",
+	"url" : "27.jpg?v=2",
 	"artist" : "syt",
 	"ch-name" : "微光 No.4",
 	"en-name" : "",
@@ -261,7 +261,7 @@
 },
 {
 	"artwork" : "syt-1",
-	"url" : "26.jpg",
+	"url" : "26.jpg?v=2",
 	"artist" : "syt",
 	"ch-name" : "微光 No.3",
 	"en-name" : "",
