@@ -201,7 +201,7 @@ $(document).ready(function() {
     var artworksList, artistsList;
 
     $.ajax({
-      url: "js/artworks.json?v=8",
+      url: "js/artworks.json?v=9",
       type: "GET",
       dataType: "json",
       success: function(Jdata) {
