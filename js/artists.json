@@ -1813,5 +1813,22 @@
 			]
 		}
 	]
+},
+{
+	"artist" : "ycm",
+	"ch-name" : "楊忠銘",
+	"en-name" : "",
+	"intro" : " ",
+	"experience" : [
+		{
+			"ch-title" : "經歷",
+			"content" : [
+				{
+					"year" : "",
+					"disc" : ""
+				}
+			]
+		}
+	]
 }
 ]
