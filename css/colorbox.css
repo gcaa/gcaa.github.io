@@ -1,0 +1,131 @@
+/*
+    Colorbox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:150;  -webkit-transform: translate3d(0,0,0);}
+#cboxWrapper {max-width:none;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto; -webkit-overflow-scrolling: touch;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
+
+.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none; -ms-interpolation-mode:bicubic;}
+.cboxIframe{width:100%; height:100%; display:block; border:0; padding:0; margin:0;}
+#colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;}
+#cboxContent button#cboxClose {
+    position: fixed;
+    right: -25px;
+    top: -45%;
+    background:url(images/close.png) no-repeat center center;
+    background-size: cover;
+    opacity: .7;
+    display: none;
+}
+#cboxContent button#cboxClose:hover {
+    opacity: 1;
+}
+/* 
+    User Style:
+    Change the following styles to modify the appearance of Colorbox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay{background: rgba(0,0,0,0.8);}
+#colorbox{outline:0;}
+#cboxError{padding:50px; border:1px solid #ccc;}
+#cboxCurrent{display: none;visibility: hidden;}
+/*#cboxLoadingOverlay{background:url(images/loading_background.png) no-repeat center center;}*/
+#cboxLoadingGraphic{
+    width : 30px;
+    height: 30px;
+    border: 3px solid transparent;
+    border-bottom-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    display: inline-block;
+    animation: rotation 0.4s linear infinite;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+@keyframes rotation {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
+}
+
+/* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
+#cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {border:0; padding:0; margin:0; overflow:visible; width:auto; background:none; }
+
+/* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
+#cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;}
+
+#cboxSlideshow{position:absolute; bottom:4px; right:30px; color:#0092ef;}
+#cboxContent button {
+    text-indent: 150%;
+    overflow: hidden;
+    white-space: nowrap;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 35px;
+    height: 55px;
+    cursor: pointer;
+    outline: none;
+    opacity: .6;
+    transition: opacity 0.4s ease;
+}
+#cboxContent button:hover {
+    opacity: 1;
+}
+#cboxPrevious {
+    position: absolute;
+    top: 46%;
+    left: -80px;
+    background: url(images/prev.png);
+}
+#cboxNext {
+    position: absolute;
+    top: 46%;
+    right: -80px;
+    background: url(images/next.png);
+}
+.cbox-link-wrapper {
+    text-align: center;
+}
+/*
+  The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
+  when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
+  See: http://jacklmoore.com/notes/ie-transparency-problems/
+*/
+.cboxIE #cboxTopLeft,
+.cboxIE #cboxTopCenter,
+.cboxIE #cboxTopRight,
+.cboxIE #cboxBottomLeft,
+.cboxIE #cboxBottomCenter,
+.cboxIE #cboxBottomRight,
+.cboxIE #cboxMiddleLeft,
+.cboxIE #cboxMiddleRight {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+}
+@media (max-width : 640px) { 
+    #cboxContent {
+        position: static;
+    }
+    #cboxContent button {
+        width: 27px;
+        height: 27px;
+        background-size: 14px;
+    }
+    #cboxPrevious {
+        left: -29px;
+    }
+    #cboxNext {
+        right: -29px;
+    }
+    #cboxContent button#cboxClose  {
+        display: block;
+    }
+}

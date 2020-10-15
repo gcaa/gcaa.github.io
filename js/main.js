@@ -31,12 +31,54 @@ $(document).ready(function() {
 
     }
 
+    var position = $(window).scrollTop();
+
+    $('.slider-pics a').colorbox({
+        transition:'fade',
+        rel: '.slider-pics a',
+        scrolling: false,
+        maxWidth: '95%',
+        maxHeight: '80%',
+        speed: '600',
+        fixed: 'true',
+        onOpen: function(){
+            $("header, main, footer").addClass("blur");
+            position = $(window).scrollTop();
+            $("html, body").addClass("hidden");
+            $('html, body').scrollTop(position);
+        },
+        onClosed: function(){
+            $("header, main, footer").removeClass("blur");
+            $("html, body").removeClass("hidden");
+        }
+      });
+
+    $('.slider-pics').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: false,
+        speed: 1600,
+        cssEase: 'ease-out',
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                dots: false,
+                rows: 1,
+                slidesPerRow: 1,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            }
+          }]
+      });
+
+    var fade_position_arr = [];
+
     function getfade(){
         fade_position_arr = [];
-
         $(".fadein").data("show",false);
         $(".fadein").each( function() {
-            var position = Math.round($(this).offset().top - ($( window ).height()/4*3));
+            var position = Math.round($(this).offset().top - ($( window ).height()/5*4));
             fade_position_arr.push(position); 
         });
     }
@@ -128,18 +170,25 @@ $(document).ready(function() {
         
     }
 
+    
+
     $(window).scroll(function(){
-        var position = $(window).scrollTop()
+        position = $(window).scrollTop();
         checkHeader(position);
         checkfadein(position);
     });
 
     $(window).resize(function(){
+        headerMenu.removeClass('detached show detachedHide')
         headerTop = headerMenu.offset().top;
-        $('.artwork').each(function(){
-            imgfit($(this));
-        });
-        getfade();
+        checkHeader(position);
+        setTimeout(function(){
+            $('.artwork').each(function(){
+                imgfit($(this));
+            });
+            getfade();
+            checkfadein(position);
+        }, 100)
     })
 
     $('.lazy').Lazy({
@@ -156,14 +205,19 @@ $(document).ready(function() {
     /* fade in */
 
     function checkfadein(position) {
+
         for (var i=0; i<=fade_position_arr.length ; i++) {
             if(position > fade_position_arr[i]){
-                $(".fadein").eq(i).addClass("show")
+                $(".fadein").eq(i).addClass("show");
             }else{
                 // $(".fadein").eq(i).removeClass("show")
             }
         }
     }
+
+    
+
+    /* popup */
 
     $('.popupbtn').click(function(){
         $('body').addClass('hidden');

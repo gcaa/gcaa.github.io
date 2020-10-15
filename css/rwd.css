@@ -50,6 +50,9 @@
 	}
 }
 @media screen and (max-width: 768px) {
+	.unscroll {
+		padding-right: 0px;
+	}
 	.mainbg {
 		height: calc(var(--vh, 1vh) * 100 - 44px);
 		position: absolute;
