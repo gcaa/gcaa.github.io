@@ -60,6 +60,8 @@ $(document).ready(function() {
         dots: false,
         speed: 1600,
         cssEase: 'ease-out',
+        autoplay: true,
+        autoplaySpeed: 2000,
         responsive: [{
             breakpoint: 768,
             settings: {

@@ -871,7 +871,7 @@ footer .container {
     background: url(images/next.png);
 }
 #cboxTitle {
-	padding: 0;
+	padding: 0 15px;
 	transition: all 0.6s ease;
 }
 #cboxTitle:not(:empty) {
