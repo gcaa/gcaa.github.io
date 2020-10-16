@@ -251,6 +251,15 @@ $(document).ready(function() {
         $('body').removeClass('hidden');
     })
 
+    /*zoomin*/
+    // View an image
+    const viewer = new Viewer(document.getElementById('artworkUrl'), {
+        navbar: false,
+      viewed() {
+        viewer.zoomTo(1);
+      },
+    });
+
 
     /* get json */
 
@@ -295,6 +304,8 @@ $(document).ready(function() {
         $('#artworkIntro').html(artwork['intro'].replace(/\n/g,'<br />'))
         
         $('#artworkData').html(artwork['data'].replace(/\n/g,'<br />'))
+
+        viewer.update();
     }
 
     function getArtist(i) {
@@ -399,5 +410,7 @@ $(document).ready(function() {
         });
 
       }
+
+
 
 })
