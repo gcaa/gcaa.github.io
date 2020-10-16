@@ -400,7 +400,7 @@ $(document).ready(function() {
         $(window).on('popstate', function() {
 
             if ($('.viewer-in').length > 0) {
-                viewer.stop();
+                $('.viewer-close').click();
                 return false;
             }else if ($('.popup.active').length > 0) {
                 $('.popup-close').click();
