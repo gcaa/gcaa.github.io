@@ -192,6 +192,7 @@ a.t-blue:hover { color: #02806e; text-decoration: underline; }
 .t-bold { font-weight: 700; }
 .t-light { font-weight: 300; }
 
+.lh-sm { line-height: 1.5; }
 .lh-mid { line-height: 1.8; }
 .lh-large { line-height: 2; }
 
