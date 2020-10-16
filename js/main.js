@@ -401,9 +401,11 @@ $(document).ready(function() {
 
             if ($('.viewer-in').length > 0) {
                 $('.viewer-close').click();
+                window.history.pushState('forward', null, './#forward');
                 return false;
             }else if ($('.popup.active').length > 0) {
                 $('.popup-close').click();
+                window.history.pushState('forward', null, './#forward');
                 // console.log('Back button was pressed.');
                 return false;
             }
