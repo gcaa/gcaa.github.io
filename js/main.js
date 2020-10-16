@@ -399,7 +399,10 @@ $(document).ready(function() {
 
         $(window).on('popstate', function() {
 
-            if ($('.popup.active').length > 0) {
+            if ('.viewer-in'.length > 0) {
+                viewer.stop();
+                return false;
+            }else if ($('.popup.active').length > 0) {
                 $('.popup-close').click();
                 // console.log('Back button was pressed.');
                 return false;
