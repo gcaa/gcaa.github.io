@@ -307,7 +307,7 @@ $(document).ready(function() {
         var aExpHtml = [];
         $.each(artistExp,function(n,value) {
             
-            $('#artistExp').append('<h4 class="t-blue mt-2 mb-s">' + value['ch-title'] + '</h4>');
+            $('#artistExp').append('<h4 class="t-blue mt-2 mb-s">' + value['ch-title'].replace(/\n/g,'<br />') + '</h4>');
             
             var ExpContent = value['content'];
             $.each(ExpContent,function(n,value) {
