@@ -941,6 +941,6 @@ footer .container {
 	opacity: 1;
 	transition: all 0.1s ease;
 }
-.popup.popup-zoomin {
-	z-index: 250;
+.viewer-backdrop {
+	background-color: rgba(0, 0, 0, 0.9);
 }

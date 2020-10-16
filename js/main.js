@@ -255,9 +255,7 @@ $(document).ready(function() {
     // View an image
     const viewer = new Viewer(document.getElementById('artworkUrl'), {
         navbar: false,
-      viewed() {
-        viewer.zoomTo(1);
-      },
+        title: false,
     });
 
 
